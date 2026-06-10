@@ -8,12 +8,13 @@ A single-file static landing page for an Investment Strategy consultancy. Built 
 
 ## Live Demo
 
-Deployed via GitHub Pages.
+[https://lienchang.github.io/financeconsultancy/](https://lienchang.github.io/financeconsultancy/)
 
 ## Features
 
+- Deep navy + warm gold design system (Playfair Display headings, Inter body)
 - Sticky navigation with mobile hamburger menu
-- Full-viewport hero section
+- Full-viewport hero section with local background image
 - Benefits grid, process timeline, testimonials
 - Lead magnet section with checklist offer
 - Enquiry form with client-side validation (posted via [FormSubmit](https://formsubmit.co))
@@ -37,10 +38,11 @@ Then visit `http://localhost:8080`.
 
 ## Project Structure
 
-Everything lives in a single file:
-
 ```
-index.html   ← all HTML, CSS, and JavaScript
+index.html                                      ← all HTML, CSS, and JavaScript
+abstract-business-finance-soft-backdrop_*.jpg   ← hero background image
+screenshot.png                                  ← README preview
+.claude/skills/frontend-design.md               ← design system skill
 ```
 
 The file is organised top-to-bottom: `<head>` styles → nav → hero → why-us → process → testimonials → lead-magnet → enquiry form → FAQ → final CTA → footer → `<script>`.
@@ -53,18 +55,22 @@ Edit the CSS variables in `:root` to retheme the entire page:
 
 ```css
 :root {
-  --primary:    /* main brand colour */
-  --secondary:  /* secondary brand colour */
-  --accent:     /* call-to-action colour */
-  --background: /* page background */
-  --text:       /* body text */
-  --light-bg:   /* subtle section backgrounds */
+  --primary:    #0a1628;   /* deep navy */
+  --secondary:  #1a3a6b;   /* mid navy */
+  --accent:     #c9a84c;   /* warm gold — CTAs, icons, highlights */
+  --background: #f8f7f4;   /* warm off-white */
+  --text:       #1c2b3a;   /* dark navy-grey body copy */
+  --light-bg:   #eef1f7;   /* pale blue-grey section backgrounds */
 }
 ```
 
+### Typography
+
+Google Fonts are loaded in `<head>`: **Playfair Display** (headings) and **Inter** (body/UI). To change fonts, update the `<link>` tags and the `--font-serif` / `--font-sans` variables.
+
 ### Hero Image
 
-Update the `background` property on `#hero` in the `<style>` block. The current image is sourced from Unsplash (no API key required).
+The hero background is the local file `abstract-business-finance-soft-backdrop_522560-22343.jpg`. To change it, drop a new image into the project root and update the `url(...)` in the `#hero` CSS rule.
 
 ### Enquiry Form
 
@@ -78,4 +84,4 @@ FormSubmit requires a one-time email confirmation on the first submission from a
 
 ## Deployment
 
-The site is deployed automatically to GitHub Pages via a GitHub Actions workflow on every push to `main`.
+The site deploys automatically to GitHub Pages via GitHub Actions on every push to `main`. The workflow includes a Gitleaks secret scan before deployment.
