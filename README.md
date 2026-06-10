@@ -19,6 +19,7 @@ A single-file static landing page for an Investment Strategy consultancy. Built 
 - Lead magnet section with checklist offer
 - Enquiry form with client-side validation (posted via [FormSubmit](https://formsubmit.co))
 - Accordion FAQ
+- Floating WhatsApp chat widget with pre-filled query buttons
 - Scroll-reveal animations using `IntersectionObserver`
 - Fully responsive (tablet, mobile, small mobile breakpoints)
 
@@ -74,13 +75,11 @@ The hero background is the local file `abstract-business-finance-soft-backdrop_5
 
 ### Enquiry Form
 
-Replace the placeholder email in the form's `action` attribute before deploying:
+The form `action` is already set to the destination email. FormSubmit requires a one-time email confirmation on the first submission from a new domain. To change the recipient, update the `action` URL on `#enquiryForm` in `index.html`.
 
-```html
-<form action="https://formsubmit.co/YOUR-EMAIL@example.com" method="POST">
-```
+### WhatsApp Widget
 
-FormSubmit requires a one-time email confirmation on the first submission from a new domain.
+The floating WhatsApp button is wired to number `96615077`. To change it, find all `wa.me/96615077` occurrences in the `#wa-widget` HTML block and update the number. If a country code is needed, prefix it (e.g. `wa.me/6096615077`).
 
 ## Deployment
 
