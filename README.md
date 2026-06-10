@@ -2,6 +2,10 @@
 
 A single-file static landing page for an Investment Strategy consultancy. Built with plain HTML, CSS, and JavaScript — no build step, no framework, no dependencies.
 
+## Preview
+
+![Landing page screenshot](screenshot.png)
+
 ## Live Demo
 
 Deployed via GitHub Pages.
